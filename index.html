@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Power Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Electrician’s Power Calculator</h1>
+  <label class="toggle">
+    <input type="checkbox" id="nightToggle" />
+    <span class="slider"></span>
+    Night Mode
+  </label>
+  <div class="card">
+    <div class="calculator">
+      <label>Volts (V): <input id="volts" type="number" /></label>
+      <label>Amps (A): <input id="amps" type="number" /></label>
+      <button id="calcBtn">Calculate Watts</button>
+      <p id="result"></p>
+    </div>
+    <div class="calculator">
+      <h2>Reverse: Calculate Amps</h2>
+      <label>Watts (W): <input id="rev-watts" type="number" /></label>
+      <label>Volts (V): <input id="rev-volts" type="number" /></label>
+      <button id="revBtn">Calculate Amps</button>
+      <p id="rev-result"></p>
+    </div>
+    <div class="calculator">
+      <h2>Three-Phase Power</h2>
+      <label>Line Voltage (V): <input id="tp-volts" type="number" /></label>
+      <label>Amps (A): <input id="tp-amps" type="number" /></label>
+      <label>Power Factor (0-1): <input id="tp-pf" type="number" step="0.01" min="0" max="1" /></label>
+      <button id="tpBtn">Calculate Power</button>
+      <p id="tp-result"></p>
+    </div>
+    <div class="calculator">
+      <h2>Unit Conversion</h2>
+      <label>Value: <input id="conv-value" type="number" /></label>
+      <label>From: 
+        <select id="conv-from">
+          <option value="W">Watts (W)</option>
+          <option value="kW">Kilowatts (kW)</option>
+          <option value="HP">Horsepower (HP)</option>
+        </select>
+      </label>
+      <label>To: 
+        <select id="conv-to">
+          <option value="W">Watts (W)</option>
+          <option value="kW">Kilowatts (kW)</option>
+          <option value="HP">Horsepower (HP)</option>
+        </select>
+      </label>
+      <button id="convBtn">Convert</button>
+      <p id="conv-result"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

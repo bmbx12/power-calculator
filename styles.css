@@ -1,0 +1,110 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --card-bg: #fff;
+}
+
+.night-mode {
+  --bg-color: #222;
+  --text-color: #f9f9f9;
+  --card-bg: #333;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  padding: 2rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.calculator {
+  max-width: 300px;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+#result,
+#rev-result,
+#tp-result {
+  font-weight: bold;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle input {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .slider {
+  background: #4caf50;
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
+  .calculator {
+    max-width: 100%;
+    margin: 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
